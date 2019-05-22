@@ -82,7 +82,7 @@ dummy:
 #
 # Note: This scenario uses the ceph-disk tool to provision OSDs
 
-osd_scenario: collocated
+osd_scenario: lvm
 #valid_osd_scenarios:
 #  - collocated
 #  - non-collocated
@@ -100,7 +100,7 @@ osd_scenario: collocated
 #
 # Let's take an example, imagine 'devices' was declared like this:
 #
-devices: [ /dev/vdb ]
+#devices: [ /dev/vdb ]
 #   - /dev/sdb
 #   - /dev/sdc
 #   - /dev/sdd
@@ -221,8 +221,12 @@ devices: [ /dev/vdb ]
 #   - data: /dev/sdb1
 
 #lvm_volumes: []
+lvm_volumes:
+  - data: osd
+    data_vg: ceph
+
 #crush_device_class: ""
-#osds_per_device: 1
+osds_per_device: 1
 
 
 ##########
