@@ -38,21 +38,21 @@ dummy:
 crush_rule_config: true
 
 crush_rule_cam:
-  name: cam
-  root: cam
-  type: host
+  name: replicated_cam
+  root: region_cam
+  type: region
   default: false
 
 crush_rule_ral:
-  name: ral
-  root: ral
-  type: host
+  name: replicated_ral
+  root: region_ral
+  type: region
   default: false
 
 crush_rule_sausage:
-  name: sausage
-  root: sausage
-  type: host
+  name: replicated_sausage
+  root: region_sausage
+  type: region
   default: false
 
 #crush_rule_hdd:
@@ -81,7 +81,7 @@ crush_rules:
 # ceph-osd-01 osd_crush_location="{ 'root': 'mon-roottt', 'rack': 'mon-rackkkk', 'pod': 'monpod', 'host': 'ceph-osd-01' }"
 #
 # Note that 'host' is mandatory and that you need to submit at least two bucket type (including the host)
-create_crush_tree: false
+create_crush_tree: true
 
 ##########
 # DOCKER #
