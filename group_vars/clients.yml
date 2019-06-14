@@ -81,7 +81,6 @@ pools:
 
 keys:
   - name: client.euclid
-    key: "AQDdOvlcgmY8FhAAeYjyW8dkMhI3hBhR/lNsag=="
     caps:
       mon: "allow r"
       osd: "allow *"
