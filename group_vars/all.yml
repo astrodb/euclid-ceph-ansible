@@ -521,7 +521,7 @@ osd_objectstore: bluestore
 #
 ceph_conf_overrides:
    global:
-      osd_pool_default_pg_num: 256
+      osd_pool_default_pg_num: 1024
       osd_pool_default_size: 2
       osd_pool_default_min_size: 1
 
