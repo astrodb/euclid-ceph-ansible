@@ -49,12 +49,6 @@ crush_rule_ral:
   type: region
   default: false
 
-crush_rule_sausage:
-  name: replicated_sausage
-  root: region_sausage
-  type: region
-  default: false
-
 #crush_rule_hdd:
 #  name: HDD
 #  root: HDD
@@ -70,7 +64,6 @@ crush_rule_sausage:
 crush_rules:
   - "{{ crush_rule_cam }}"
   - "{{ crush_rule_ral }}"
-  - "{{ crush_rule_sausage }}"
 
 # Caution: this will create crush roots and racks according to hostvars {{ osd_crush_location }}
 # and will move hosts into them which might lead to significant data movement in the cluster!
