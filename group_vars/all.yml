@@ -359,8 +359,8 @@ monitor_interface: "{{ openvpn_intra_if | default('eth0') }}"
 
 ## OSD options
 #
-#is_hci: false
-#hci_safety_factor: 0.2
+is_hci: true
+hci_safety_factor: 0.15
 #non_hci_safety_factor: 0.7
 #osd_memory_target: 4294967296
 #journal_size: 5120 # OSD journal size in MB
