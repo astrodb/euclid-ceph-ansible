@@ -49,6 +49,12 @@ crush_rule_ral:
   type: region
   default: false
 
+crush_rule_imp:
+  name: replicated_imp
+  root: region_imp
+  type: region
+  default: false
+
 #crush_rule_hdd:
 #  name: HDD
 #  root: HDD
@@ -64,6 +70,7 @@ crush_rule_ral:
 crush_rules:
   - "{{ crush_rule_cam }}"
   - "{{ crush_rule_ral }}"
+  - "{{ crush_rule_imp }}"
 
 # Caution: this will create crush roots and racks according to hostvars {{ osd_crush_location }}
 # and will move hosts into them which might lead to significant data movement in the cluster!

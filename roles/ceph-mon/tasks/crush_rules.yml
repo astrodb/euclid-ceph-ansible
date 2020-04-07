@@ -1,4 +1,9 @@
 ---
+- name: STIG - what are the CRUSH locations?
+  debug:
+    var: hostvars[item]['osd_crush_location']
+  with_items: "{{ groups[osd_group_name] }}"
+
 - name: configure crush hierarchy
   ceph_crush:
     cluster: "{{ cluster }}"
@@ -10,6 +15,10 @@
     - inventory_hostname == groups.get(mon_group_name) | last
     - create_crush_tree
     - hostvars[item]['osd_crush_location'] is defined
+
+- name: STIG - what is the CRUSH hierarchy?
+  debug:
+    var: config_crush_hierarchy
 
 - name: create configured crush rules
   command: "{{ docker_exec_cmd }} ceph --cluster {{ cluster }} osd crush rule create-simple {{ item.name }} {{ item.root }} {{ item.type }}"

@@ -186,7 +186,7 @@
 - hosts: osds
   gather_facts: false
   become: True
-  any_errors_fatal: true
+  any_errors_fatal: false
   pre_tasks:
     - name: set ceph osd install 'In Progress'
       run_once: true
